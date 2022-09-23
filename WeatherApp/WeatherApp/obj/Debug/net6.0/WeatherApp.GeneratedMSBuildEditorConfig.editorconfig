@@ -22,20 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Pages/Forecasts/Forecasts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9yZWNhc3RzXEZvcmVjYXN0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/Shared/FetchZoneForecastError.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZldGNoWm9uZUZvcmVjYXN0RXJyb3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/fabian.romero/Documents/BlazorWeather/WeatherApp/WeatherApp/_Imports.razor]

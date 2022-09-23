@@ -1,5 +1,5 @@
-﻿@page "/"
-@inject IWeatherService WeatherService
+﻿@page "/v2"
+@inject IForecastsViewModel viewModel
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -7,17 +7,16 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<EditForm Model="@search" OnValidSubmit="@handleSubmit" @onsubmit:preventDefault>
-    <InputText @bind-Value="search.Criteria" />
+<EditForm Model="@viewModel.search" OnValidSubmit="@handleSubmit" @onsubmit:preventDefault>
+    <InputText @bind-Value="viewModel.search.Criteria" />
     <button type="submit">Search</button>
     <DataAnnotationsValidator />
 </EditForm>
 
 <div>
-
 </div>
 
-@if (forecast != null && !fetchError)
+@if (viewModel.forecast != null && !viewModel.fetchError)
 {
     <table class="table">
         <thead>
@@ -27,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var period in forecast.Properties.Periods)
+            @foreach (var period in viewModel.forecast.Properties.Periods)
             {
                 <tr id="@period.Number">
                     <td>@period.Name</td>
@@ -36,11 +35,11 @@
             }
         </tbody>
     </table>
-    <p>Last updated at: @forecast.Properties.Updated.ToShortTimeString()</p>
+    <p>Last updated at: @viewModel.forecast.Properties.Updated.ToShortTimeString()</p>
 }
-else if (fetchError)
+else if (viewModel.fetchError)
 {
-    <FetchZoneForecastError Criteria="@search.Criteria"/>
+    <FetchZoneForecastError Criteria="@viewModel.search.Criteria" />
 }
 else
 {
@@ -48,23 +47,18 @@ else
 }
 
 @code {
-    private WeatherForecast? forecast;
-    private Search search = new();
-    private bool fetchError = false;
-
     private async void handleSubmit()
     {
         try
         {
-            fetchError = false;
-            forecast = await WeatherService.GetWeatherForecast(search.Criteria);
+            viewModel.fetchError = false;
+            await viewModel.FetchForecast();
             StateHasChanged();
         }
         catch (Exception ex)
         {
-            fetchError = true;
+            viewModel.fetchError = true;
             StateHasChanged();
         }
-
     }
 }

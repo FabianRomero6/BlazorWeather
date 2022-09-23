@@ -1767,9 +1767,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.Client.csproj",
-      "projectName": "WeatherApp.Client",
-      "projectPath": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.Client.csproj",
+      "projectUniqueName": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.csproj",
+      "projectName": "WeatherApp",
+      "projectPath": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.csproj",
       "packagesPath": "C:\\Users\\fabian.romero\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\obj\\",
       "projectStyle": "PackageReference",

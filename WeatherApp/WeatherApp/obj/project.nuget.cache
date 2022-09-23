@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KEJPJ8w2nK5B1N+UopdJFcAY7nNVxGveE6Txs7ZxNh0AmakYBqwu75YScNVZEFGAKuYhoGPTzNIsB3ftXbRJGQ==",
+  "dgSpecHash": "n0o6DSuWEJAGbFl0VSjZRBQa+om6BMxnyWyIvttLoNORiivzuz/RCC85NsqCCvaSod45WFyIZWYG2vmBAxbBoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.Client.csproj",
+  "projectFilePath": "C:\\Users\\fabian.romero\\Documents\\BlazorWeather\\WeatherApp\\WeatherApp\\WeatherApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabian.romero\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.9\\microsoft.aspnetcore.authorization.6.0.9.nupkg.sha512",
     "C:\\Users\\fabian.romero\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.9\\microsoft.aspnetcore.components.6.0.9.nupkg.sha512",
