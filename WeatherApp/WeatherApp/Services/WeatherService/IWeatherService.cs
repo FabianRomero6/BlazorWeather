@@ -5,4 +5,6 @@ namespace WeatherApp.Services.WeatherService;
 public interface IWeatherService
 {
     Task<WeatherForecast> GetWeatherForecast(string criteria);
+
+    Task<ZoneCollection> GetZones();
 }

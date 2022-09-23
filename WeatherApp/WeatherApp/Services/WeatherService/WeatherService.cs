@@ -15,4 +15,9 @@ public class WeatherService : IWeatherService
 	{
 		return await _http.GetFromJsonAsync<WeatherForecast>($"https://api.weather.gov/zones/public/{criteria}/forecast");
     }
+
+	public async Task<ZoneCollection> GetZones()
+	{
+		return await _http.GetFromJsonAsync<ZoneCollection>($"https://api.weather.gov/zones/public");
+	}
 }
