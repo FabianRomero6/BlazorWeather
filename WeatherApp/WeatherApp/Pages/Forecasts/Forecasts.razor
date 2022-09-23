@@ -1,50 +1,52 @@
 ﻿@page "/v2"
 @inject IForecastsViewModel viewModel
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>⛅ Weather Forecast</PageTitle>
 
-<h1>Weather forecast</h1>
+<div class="container">
+    <div class="header">
+        <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+        <EditForm class="search-box" Model="@viewModel.search" OnValidSubmit="@handleSubmit" @onsubmit:preventDefault>
+            <InputText @bind-Value="viewModel.search.Criteria" />
+            <button class="btn-color" type="submit">Search</button>
+            <DataAnnotationsValidator />
+        </EditForm>
+    </div>
 
-<EditForm Model="@viewModel.search" OnValidSubmit="@handleSubmit" @onsubmit:preventDefault>
-    <InputText @bind-Value="viewModel.search.Criteria" />
-    <button type="submit">Search</button>
-    <DataAnnotationsValidator />
-</EditForm>
-
-<div>
+    <div>
+        @if (viewModel.forecast != null && !viewModel.fetchError)
+        {
+            <RecentForecast Item="@viewModel.firstForecast"/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>When?</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var period in viewModel.forecast.Properties.Periods)
+                    {
+                        <tr id="@period.Number">
+                            <td>@period.Name</td>
+                            <td>@period.DetailedForecast</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p class="update">Last updated at: @viewModel.forecast.Properties.Updated.ToShortTimeString()</p>
+        }
+        else if (viewModel.fetchError)
+        {
+            <FetchZoneForecastError Criteria="@viewModel.search.Criteria" />
+        }
+        else
+        {
+            <p><em>Search the forecast of your zone!</em></p>
+        }
+    </div>
 </div>
-
-@if (viewModel.forecast != null && !viewModel.fetchError)
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>When?</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var period in viewModel.forecast.Properties.Periods)
-            {
-                <tr id="@period.Number">
-                    <td>@period.Name</td>
-                    <td>@period.DetailedForecast</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <p>Last updated at: @viewModel.forecast.Properties.Updated.ToShortTimeString()</p>
-}
-else if (viewModel.fetchError)
-{
-    <FetchZoneForecastError Criteria="@viewModel.search.Criteria" />
-}
-else
-{
-    <p><em>Search the forecast of your zone!</em></p>
-}
 
 @code {
     private async void handleSubmit()
